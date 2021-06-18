@@ -10,9 +10,22 @@ html {
 body {
     margin: 0;
     padding: 0;
+    background-color: $background;
+    font-family: $font;
 }
 
 h1, h2, h3 {
     margin-top: 0;
+}
+
+hr {
+    border-color: rgba($darkGrayCyan, 0.3);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
 }
 
