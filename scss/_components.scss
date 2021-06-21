@@ -16,6 +16,69 @@
     }
 }
 
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.filter-list li {
+    display: inline-block;
+    margin-right: 3.5rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: $background;
+    color: $primary;
+    font-size: 0.875rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.filter-list li::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 2.5rem;
+    top: 0;
+    bottom: 0;
+    right: -2.5rem;
+    background-color: $primary;
+    color: $white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 1.35rem;
+    content: '\f00d';
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+
+.filter-list li:hover::after {
+    background-color: $black;
+}
+
+.clear-items {
+    display: block;
+    margin-left: 1rem;
+    color: $darkGrayCyan;
+    text-decoration: none;
+
+    &:hover {
+        color: $primary;
+        text-decoration: underline;
+    }
+}
+
 .featured {
     border-left: 5px solid $primary;
 }
