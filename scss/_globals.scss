@@ -22,10 +22,15 @@ hr {
     border-color: rgba($darkGrayCyan, 0.3);
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+
+    @media (min-width: 70rem) {
+        display: none;
+    }
 }
 
 .container {
-    max-width: 90%;
+    width: 90%;
+    max-width: 96.333rem;
     margin: 0 auto;
 }
 

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <title>Frontend Mentor | Job Listings</title>
+
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="filter-menu"></div>
+  </header>
+
+  <main class="container">
+
+    <!-- Item Start -->
+    <div class="box">
+      <div class="col-1">
+        <div class="logo">
+          <img src="images/photosnap.svg" alt="Photosnap">
+        </div>
+        <div class="company-details">
+          <div class="company">Photosnap</div>
+          <div class="btn new-btn">New!</div>
+          <div class="btn featured-btn">Featured</div>
+          <h2 class="position">Senior Frontend Developer</h2>
+          <ul class="job-details-list">
+            <li class="job-details-item">1d ago</li>
+            <li class="job-details-item">Full Time</li>
+            <li class="job-details-item">USA only</li>
+          </ul>
+        </div>
+        <hr>
+      </div>
+      <div class="col-2">
+        <div class="attributes">
+          <!-- Languages -->
+          <ul class="attribute-list">
+            <!-- role -->
+            <li>Frontend</li>
+            <!-- level -->
+            <li>Senior</li>
+            <!-- languages -->
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Item End -->
+
+    <!-- Item Start -->
+    <div class="box">
+      <div class="col-1">
+        <div class="logo">
+          <img src="images/manage.svg" alt="Manage">
+        </div>
+        <div class="company-details">
+          <div class="company">Manage</div>
+          <div class="btn new-btn">New!</div>
+          <div class="btn featured-btn">Featured</div>
+          <h2 class="position">Fullstack Developer</h2>
+          <ul class="job-details-list">
+            <li class="job-details-item">1d ago</li>
+            <li class="job-details-item">Part Time</li>
+            <li class="job-details-item">Remote</li>
+          </ul>
+        </div>
+        <hr>
+      </div>
+      <div class="col-2">
+        <div class="attributes">
+          <!-- Languages -->
+          <ul class="attribute-list">
+            <!-- role -->
+            <li>Fullstack</li>
+            <!-- level -->
+            <li>Midweight</li>
+            <!-- languages -->
+            <li>Python</li>
+            <!-- tools -->
+            <li>React</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Item End -->
+
+    <!-- Item Start -->
+    <div class="box">
+      <div class="col-1">
+        <div class="logo">
+          <img src="images/account.svg" alt="Account">
+        </div>
+        <div class="company-details">
+          <div class="company">Account</div>
+          <div class="btn new-btn">New!</div>
+          <h2 class="position">Junior Frontend Developer</h2>
+          <ul class="job-details-list">
+            <li class="job-details-item">2d ago</li>
+            <li class="job-details-item">Part Time</li>
+            <li class="job-details-item">USA only</li>
+          </ul>
+        </div>
+        <hr>
+      </div>
+      <div class="col-2">
+        <div class="attributes">
+          <!-- Languages -->
+          <ul class="attribute-list">
+            <!-- role -->
+            <li>Frontend</li>
+            <!-- level -->
+            <li>Junior</li>
+            <!-- languages -->
+            <li>JavaScript</li>
+            <!-- tools -->
+            <li>React</li>
+            <li>Sass</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Item End -->
+
+    <!-- Item Start -->
+    MyHome
+    Junior Frontend Developer
+    5d ago
+    Contract
+    USA only
+    <!-- Role -->
+    Frontend
+    <!-- Level -->
+    Junior
+    <!-- Languages -->
+    CSS
+    JavaScript
+    <!-- Item End -->
+
+    <!-- Item Start -->
+    Loop Studios
+    Software Engineer
+    1w ago
+    Full Time
+    Worldwide
+    <!-- Role -->
+    Fullstack
+    <!-- Level -->
+    Midweight
+    <!-- Languages -->
+    JavaScript
+    Ruby
+    <!-- Tools -->
+    Sass
+    <!-- Item End -->
+
+    <!-- Item Start -->
+    FaceIt
+    Junior Backend Developer
+    2w ago
+    Full Time
+    UK only
+    <!-- Role -->
+    Backend
+    <!-- Level -->
+    Junior
+    <!-- Languages -->
+    Ruby
+    <!-- Tools -->
+    RoR
+    <!-- Item End -->
+
+    <!-- Item Start -->
+    Shortly
+    Junior Developer
+    2w ago
+    Full Time
+    Worldwide
+    <!-- Role -->
+    Frontend
+    <!-- Level -->
+    Junior
+    <!-- Languages -->
+    HTML
+    JavaScript
+    <!-- Tools -->
+    Sass
+    <!-- Item End -->
+
+    <!-- Item Start -->
+    Insure
+    Junior Frontend Developer
+    2w ago
+    Full Time
+    USA only
+    <!-- Role -->
+    Frontend
+    <!-- Level -->
+    Junior
+    <!-- Languages -->
+    JavaScript
+    <!-- Tools -->
+    Vue
+    Sass
+    <!-- Item End -->
+
+    <!-- Item Start -->
+    Eyecam Co.
+    Full Stack Engineer
+    3w ago
+    Full Time
+    Worldwide
+    <!-- Role -->
+    Fullstack
+    <!-- Level -->
+    Midweight
+    <!-- Languages -->
+    JavaScript
+    Python
+    <!-- Tools -->
+    Django
+    <!-- Item End -->
+
+    <!-- Item Start -->
+    The Air Filter Company
+    Front-end Dev
+    1mo ago
+    Part Time
+    Worldwide
+    <!-- Role -->
+    Frontend
+    <!-- Level -->
+    Junior
+    <!-- Languages -->
+    JavaScript
+    <!-- Tools -->
+    React
+    Sass
+    <!-- Item End -->
+
+  </main>
+
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

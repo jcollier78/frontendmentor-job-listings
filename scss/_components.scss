@@ -6,8 +6,25 @@
     margin-top: 2rem;
     margin-bottom: 2.666rem;
     padding: 1rem;
-    border-left: 5px solid $primary;
     position: relative;
+
+    @media (min-width: 70rem) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+}
+
+.featured {
+    border-left: 5px solid $primary;
+}
+
+.col-1 {
+    @media (min-width: 70rem) {
+        display: flex;
+        align-items: center;
+    }  
 }
 
 .company-details {
@@ -16,19 +33,28 @@
 
     & > div {
         display: inline-block;
+        margin-right: 0.5rem;
     }
 }
 
-.logo {
-    width: 50px;
-    height: 50px;
+.logo img {
+    width: 3.3333rem;
+    height: auto;
     border-radius: 50%;
-    position: absolute;
-    top: -25px;
-    left: 1rem;
-    background-image: url('../images/photosnap.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    margin-top: -50%;
+    // position: absolute;
+    // top: -25px;
+    // left: 1rem;
+    // background-image: url('../images/photosnap.svg');
+    // background-size: cover;
+    // background-repeat: no-repeat;
+
+    @media (min-width: 70rem) {
+        width: 6rem;
+        height: auto;
+        margin-top: 0;
+        margin-right: 2rem;
+    }
 }
 
 .company {
@@ -40,6 +66,7 @@
 .position {
     font-size: 1rem;
     font-weight: 700;
+    margin-top: 0.875rem;
     margin-bottom: 1.25rem;
 }
 
@@ -60,6 +87,10 @@
     list-style-type: none;
 }
 
+.attributes {
+    justify-self: flex-end;
+}
+
 .attribute-list {
     margin: 0;
     padding: 0;
@@ -75,7 +106,8 @@
     background-color: $background;
     font-size: 0.9rem;
     font-weight: 700;
-    color: $primary
+    color: $primary;
+    cursor: pointer;
 }
 
 // Buttons

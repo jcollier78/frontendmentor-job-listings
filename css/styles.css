@@ -26,8 +26,15 @@ hr {
   margin-bottom: 1.5rem;
 }
 
+@media (min-width: 70rem) {
+  hr {
+    display: none;
+  }
+}
+
 .container {
-  max-width: 90%;
+  width: 90%;
+  max-width: 96.333rem;
   margin: 0 auto;
 }
 
@@ -39,8 +46,37 @@ hr {
   margin-top: 2rem;
   margin-bottom: 2.666rem;
   padding: 1rem;
-  border-left: 5px solid #5ba4a4;
   position: relative;
+}
+
+@media (min-width: 70rem) {
+  .box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1rem 2rem;
+  }
+}
+
+.featured {
+  border-left: 5px solid #5ba4a4;
+}
+
+@media (min-width: 70rem) {
+  .col-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .company-details {
@@ -50,18 +86,23 @@ hr {
 
 .company-details > div {
   display: inline-block;
+  margin-right: 0.5rem;
 }
 
-.logo {
-  width: 50px;
-  height: 50px;
+.logo img {
+  width: 3.3333rem;
+  height: auto;
   border-radius: 50%;
-  position: absolute;
-  top: -25px;
-  left: 1rem;
-  background-image: url("../images/photosnap.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  margin-top: -50%;
+}
+
+@media (min-width: 70rem) {
+  .logo img {
+    width: 6rem;
+    height: auto;
+    margin-top: 0;
+    margin-right: 2rem;
+  }
 }
 
 .company {
@@ -73,6 +114,7 @@ hr {
 .position {
   font-size: 1rem;
   font-weight: 700;
+  margin-top: 0.875rem;
   margin-bottom: 1.25rem;
 }
 
@@ -95,6 +137,10 @@ hr {
   list-style-type: none;
 }
 
+.attributes {
+  justify-self: flex-end;
+}
+
 .attribute-list {
   margin: 0;
   padding: 0;
@@ -111,6 +157,7 @@ hr {
   font-size: 0.9rem;
   font-weight: 700;
   color: #5ba4a4;
+  cursor: pointer;
 }
 
 .btn {
@@ -138,5 +185,12 @@ hr {
   background-color: #5ba4a4;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 70rem) {
+  .header {
+    background-image: url("../images/bg-header-desktop.svg");
+  }
 }
 /*# sourceMappingURL=styles.css.map */

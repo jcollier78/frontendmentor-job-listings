@@ -4,4 +4,9 @@
     background-color: $primary;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 3rem;
+
+    @media (min-width: 70rem) {
+        background-image: url('../images/bg-header-desktop.svg');
+    }
 }
