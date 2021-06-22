@@ -273,6 +273,10 @@ hr {
   background-color: #000000;
 }
 
+.hide {
+  display: none;
+}
+
 .header {
   height: 155px;
   background-image: url("../images/bg-header-mobile.svg");

@@ -2,86 +2,24 @@ const getData = new XMLHttpRequest();
 const url = "data.json";
 
 fetch(url).then(res => res.json()).then(data => {
-    filterData(data);
+    displayData(data);
 });
 
-function filterData(data) {
-    // get filters
-    let posFilters = [];
-    let roleFilters = [];
-    let levelFilters = [];
-    let postedFilters = [];
-    let contractFilters = [];
-    let locFilters = [];
-    let langFilters = [];
-    let toolFilters = [];
-
-    //loop through all listings
-    data.forEach(e => {
-        if(posFilters.indexOf(e.role) === -1){
-            posFilters.push(e.role);
-        }
-
-        if(roleFilters.indexOf(e.level) === -1){
-            roleFilters.push(e.level);
-        }
-
-        if(postedFilters.indexOf(e.postedAt) === -1){
-            postedFilters.push(e.postedAt);
-        }
-
-        if(contractFilters.indexOf(e.contract) === -1){
-            contractFilters.push(e.contract);
-        }
-
-        if(locFilters.indexOf(e.location) === -1){
-            locFilters.push(e.location);
-        }
-
-        // loop through languages array, check if item is in langFilter, add if not 
-        e.languages.forEach(item => {
-            if(langFilters.indexOf(item) === -1){
-                langFilters.push(item);
-            }
-        });
-
-        // loop through tools array, check if item is in langFilter, add if not
-        e.tools.forEach(item => {
-            if(toolFilters.indexOf(item) === -1){
-                toolFilters.push(item);
-            }
-        });
-    });
-
-    console.log(posFilters);
-    console.log(roleFilters);
-    console.log(levelFilters);
-    console.log(postedFilters);
-    console.log(contractFilters);
-    console.log(locFilters);
-    console.log(langFilters);
-    console.log(toolFilters);
-
-    // array of current filters - update everytime a filter is added or removed
-    currentFilters = ['Frontend', 'USA Only', ];
-    filteredData = data;
-
-    data.forEach(e => {
-        e.filter
-    });
-    
-    displayData(filteredData);
-}
-
+// initial display of all listings
 function displayData(data){
-
     data.forEach(e => {
         // create main box div
         let box = document.createElement('div');
         box.className = 'box';
+        box.classList.add('filter-item');
+
         if(e.featured){
             box.classList.add('featured');
         }
+
+        // add attributes as class names to box to filter in css
+        box.classList.add(e.role.toLowerCase()); 
+        box.classList.add(e.level.toLowerCase());
     
         // create first col
         let col1 = document.createElement('div');
@@ -130,19 +68,73 @@ function displayData(data){
 
         e.languages.forEach(elem => {
             attributeList.innerHTML += '<li>' + elem + '</li>';
+
+            // add attributes as class names to box to filter in css
+            box.classList.add(elem.toLowerCase());
         });
 
         e.tools.forEach(elem => {
             attributeList.innerHTML += '<li>' + elem + '</li>';
+
+            // add attributes as class names to box to filter in css
+            box.classList.add(elem.toLowerCase());
         });
 
         attributes.appendChild(attributeList);
         col2.appendChild(attributes);
         box.appendChild(col2);
 
-        document.querySelector("main").appendChild(box);
+        document.querySelector("#content").appendChild(box);
     });
 
-    
+
+
+    // array of current filters
+    let currentFilters = [];
+        
+    // add event listener to all li items within class 'attribute-list'
+    // get array of li items
+    let attributeItems = Array.from(document.querySelectorAll('.attribute-list li'));
+
+    //loop through array and add event listener
+    attributeItems.forEach(item => {
+        item.addEventListener('click', e => {
+            // add clicked filter to currentFilters array - no duplicates
+            if(currentFilters.indexOf(e.target.textContent) === -1){
+                currentFilters.push(e.target.textContent);
+            }
+            console.log(currentFilters);
+
+            // if currentFilters array is empty, don't show filter box
+            if(currentFilters.length > 0) {
+                document.querySelector('.filter').classList.remove('hide');
+            }
+
+            document.querySelector('.filter-list').innerHTML = "";
+
+            // add filter items to filter list
+            currentFilters.forEach(item => {
+                let listItem = document.createElement('li');
+                listItem.textContent = item;
+                document.querySelector('.filter-list').appendChild(listItem);
+            });
+        });
+    });
+
+    // clear button - empty currentFilters array
+    const clearItems = document.querySelector('.clear-items');
+    clearItems.addEventListener('click', (data) => {
+        currentFilters = [];
+        document.querySelector('.filter').classList.add('hide');
+        document.querySelector('.filter-list').innerHTML = "";
+        console.log(currentFilters);
+    });
+
+
 }
+
+
+
+
+    
 

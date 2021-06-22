@@ -5,12 +5,13 @@ fetch(url).then(res => res.json()).then(data => {
     displayData(data);
 });
 
+// initial display of all listings
 function displayData(data){
-
     data.forEach(e => {
         // create main box div
         let box = document.createElement('div');
         box.className = 'box';
+        box.classList.add('filter-item');
 
         if(e.featured){
             box.classList.add('featured');
@@ -86,36 +87,74 @@ function displayData(data){
         document.querySelector("#content").appendChild(box);
     });
 
-    filterData(data);
-}
 
-function filterData(data) {
 
     // array of current filters
     let currentFilters = [];
-    
+        
     // add event listener to all li items within class 'attribute-list'
-
     // get array of li items
     let attributeItems = Array.from(document.querySelectorAll('.attribute-list li'));
-    
-    //loop through array and add event listener
+
+    // add event listeners to all filter buttons
     attributeItems.forEach(item => {
         item.addEventListener('click', e => {
-            // add clicked filter to currentFilters array - don't allow duplicates
+            // add clicked filter to currentFilters array - no duplicates
             if(currentFilters.indexOf(e.target.textContent) === -1){
                 currentFilters.push(e.target.textContent);
             }
             console.log(currentFilters);
 
-            
+            filterData();
         });
     });
 
     // clear button - empty currentFilters array
     const clearItems = document.querySelector('.clear-items');
-    clearItems.addEventListener('click', (data) => {
+    clearItems.addEventListener('click', () => {
         currentFilters = [];
-        console.log(currentFilters);
+        filterData();
+        // console.log(currentFilters);
     });
+
+    // filter data
+    function filterData(){
+        // if currentFilters array is empty, don't show filter box
+        if(currentFilters.length > 0) {
+            document.querySelector('.filter').classList.remove('hide');
+        }
+        else {
+            document.querySelector('.filter').classList.add('hide');
+        }
+
+        document.querySelector('.filter-list').innerHTML = "";
+
+        // add filter items to filter list and add event listeners to filter items
+        currentFilters.forEach(item => {
+            let listItem = document.createElement('li');
+            listItem.textContent = item;
+            document.querySelector('.filter-list').appendChild(listItem);
+        });
+
+        createRemoveBtns();
+    }
+
+    function createRemoveBtns() {
+        
+        document.querySelector('.filter-list li').addEventListener('click', e => {
+            currentFilters.forEach(item => {
+                let index = item.indexOf(e);
+                console.log(index);
+            });
+        });
+
+    }
+
+
 }
+
+
+
+
+    
+
