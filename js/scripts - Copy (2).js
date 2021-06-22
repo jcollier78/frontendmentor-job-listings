@@ -11,14 +11,9 @@ function displayData(data){
         // create main box div
         let box = document.createElement('div');
         box.className = 'box';
-
         if(e.featured){
             box.classList.add('featured');
         }
-
-        // add attributes as class names to box to filter in css
-        box.classList.add(e.role.toLowerCase()); 
-        box.classList.add(e.level.toLowerCase());
     
         // create first col
         let col1 = document.createElement('div');
@@ -67,16 +62,10 @@ function displayData(data){
 
         e.languages.forEach(elem => {
             attributeList.innerHTML += '<li>' + elem + '</li>';
-
-            // add attributes as class names to box to filter in css
-            box.classList.add(elem.toLowerCase());
         });
 
         e.tools.forEach(elem => {
             attributeList.innerHTML += '<li>' + elem + '</li>';
-
-            // add attributes as class names to box to filter in css
-            box.classList.add(elem.toLowerCase());
         });
 
         attributes.appendChild(attributeList);
@@ -108,7 +97,26 @@ function filterData(data) {
             }
             console.log(currentFilters);
 
-            
+            // loop through data filter data according to currentFilters
+            const filteredData = [];
+
+            data.forEach(item => {
+                currentFilters.forEach(e => {
+                    if(currentFilters.length > 0 && item.role === e){
+                        filteredData.push(item);
+                    }
+                });
+            });
+
+            // display filtered data
+            if(currentFilters.length === 0){
+                displayData(data);
+            }
+            else {
+                document.getElementById('content').innerHTML = "";
+                displayData(filteredData);
+                console.log(filteredData);
+            } 
         });
     });
 
@@ -116,6 +124,9 @@ function filterData(data) {
     const clearItems = document.querySelector('.clear-items');
     clearItems.addEventListener('click', (data) => {
         currentFilters = [];
-        console.log(currentFilters);
+        filterData(data);
     });
 }
+
+
+
