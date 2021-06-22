@@ -105,7 +105,7 @@ function displayData(data){
             }
             console.log(currentFilters);
 
-            filterData();
+            filterList();
         });
     });
 
@@ -113,12 +113,28 @@ function displayData(data){
     const clearItems = document.querySelector('.clear-items');
     clearItems.addEventListener('click', () => {
         currentFilters = [];
-        filterData();
-        // console.log(currentFilters);
+        filterList();
+        console.log(currentFilters);
     });
 
-    // filter data
-    function filterData(){
+    // create buttons for filter list
+    function buttonList(){
+        let buttons = Array.from(document.querySelectorAll('.filter-list li'));
+        buttons.forEach(item => {
+            item.addEventListener('click', () => {
+                const index = currentFilters.indexOf(item.textContent);
+                if(currentFilters.indexOf(item.textContent) > -1){
+                    currentFilters.splice(index, 1);
+                    console.log(currentFilters);
+                    filterList();
+                }
+            });
+        });
+    }
+    
+
+    // add functionality to remove buttons on filtered items
+    function filterList(){
         // if currentFilters array is empty, don't show filter box
         if(currentFilters.length > 0) {
             document.querySelector('.filter').classList.remove('hide');
@@ -136,20 +152,12 @@ function displayData(data){
             document.querySelector('.filter-list').appendChild(listItem);
         });
 
-        createRemoveBtns();
+        buttonList();
     }
 
-    function createRemoveBtns() {
-        
-        document.querySelector('.filter-list li').addEventListener('click', e => {
-            currentFilters.forEach(item => {
-                let index = item.indexOf(e);
-                console.log(index);
-            });
-        });
-
+    function filterData(){
+        console.log('yes');
     }
-
 
 }
 

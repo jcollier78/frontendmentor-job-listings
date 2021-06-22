@@ -1,12 +1,10 @@
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-size: 15px;
 }
 
 *, *::before, *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
@@ -41,8 +39,7 @@ hr {
 .box {
   background-color: white;
   border-radius: 5px;
-  -webkit-box-shadow: 0 13px 15px rgba(91, 164, 164, 0.2);
-          box-shadow: 0 13px 15px rgba(91, 164, 164, 0.2);
+  box-shadow: 0 13px 15px rgba(91, 164, 164, 0.2);
   margin-top: 2rem;
   margin-bottom: 2.666rem;
   padding: 1rem;
@@ -51,29 +48,17 @@ hr {
 
 @media (min-width: 70rem) {
   .box {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem 2rem;
   }
 }
 
 .filter {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   margin-top: -5.5rem;
 }
 
@@ -99,15 +84,9 @@ hr {
 }
 
 .filter-list li::after {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   width: 2.5rem;
   top: 0;
@@ -122,7 +101,6 @@ hr {
   font-size: 1.35rem;
   content: '\f00d';
   cursor: pointer;
-  -webkit-transition: background-color 200ms ease-in-out;
   transition: background-color 200ms ease-in-out;
 }
 
@@ -148,12 +126,8 @@ hr {
 
 @media (min-width: 70rem) {
   .col-1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
 }
 
@@ -202,8 +176,6 @@ hr {
 }
 
 .job-details-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   color: #7b8e8e;
   margin: 0 0 1rem 0;
@@ -245,7 +217,6 @@ hr {
   font-weight: 700;
   color: #5ba4a4;
   cursor: pointer;
-  -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
 
