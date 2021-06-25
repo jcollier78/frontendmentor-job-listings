@@ -100,7 +100,7 @@ function displayData(data){
     attributeItems.forEach(item => {
         item.addEventListener('click', e => {
             // add clicked filter to currentFilters array - no duplicates
-            if(currentFilters.indexOf(e.target.textContent) === -1){
+            if(currentFilters.indexOf(e.target.textContent.toLowerCase()) === -1){
                 currentFilters.push(e.target.textContent.toLowerCase());
             }
             console.log(currentFilters);
@@ -125,7 +125,7 @@ function displayData(data){
                 const index = currentFilters.indexOf(item.textContent);
                 if(currentFilters.indexOf(item.textContent) > -1){
                     currentFilters.splice(index, 1);
-                    console.log(currentFilters);
+                    // console.log(currentFilters);
                     filterList();
                 }
             });
@@ -155,8 +155,8 @@ function displayData(data){
         // filter job listings - if class list of box doesn't have any of the currentFilter items, hide it
         let boxesToFilter = Array.from(document.querySelectorAll(".filter-item"));
         boxesToFilter.forEach(elem => {
-            console.log(elem);
-            console.log(currentFilters.every(e => elem.classList.contains(e)));
+            // console.log(elem);
+            // console.log(currentFilters.every(e => elem.classList.contains(e)));
             
             // check for boxes that don't have every item in currentFilters array and hide them
             if(!currentFilters.every(e => elem.classList.contains(e))){
